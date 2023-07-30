@@ -5,7 +5,7 @@ $(document).ready(function () {
 
   // Function to render a note in the notepad
   function renderNote(id, title, date, body, color) {
-    $('#listed').append('<div id="' + id + '" style="background-color: ' + color + '"><div class="list-title">' + title + '</div> <div class="list-date">' + date + '</div> <div class="list-text">' + body + '</div> </div>');
+    $('#listed').append('<div id="' + id + '" style="background-color: ' + color + '"><div role="button" class="list-title">' + title + '</div> <div class="list-date">' + date + '</div> <div class="list-text">' + body + '</div> </div>');
     noteCount = Math.max(noteCount, id);
   }
 
@@ -78,7 +78,7 @@ $(document).ready(function () {
       activeNote = null;
     } else {
       var created = new Date();
-      $('#listed').append('<div id="' + id + '" style="background-color: ' + color + '"><div class="list-title">' + title + '</div> <div class="list-date">' + created.toLocaleString("en-US") + '</div> <div class="list-text">' + body + '</div> </div>');
+      $('#listed').append('<div id="' + id + '" style="background-color: ' + color + '"><div role="button" class="list-title">' + title + '</div> <div class="list-date">' + created.toLocaleString("en-US") + '</div> <div class="list-text">' + body + '</div> </div>');
       noteCount++;
 
       // Update notes with new note
